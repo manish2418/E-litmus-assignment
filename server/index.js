@@ -21,5 +21,5 @@ app.use("/auth", require("./routes/user"));
 
 const PORT = process.env.PORT || 5043;
 
-app.listen(5043, () => console.log("Server is running"));
+app.listen(PORT, () => console.log("Server is running"));
 module.exports = app;
