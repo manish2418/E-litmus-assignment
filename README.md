@@ -1,3 +1,4 @@
+
 # E-litmus-assignment
 
 
@@ -61,3 +62,16 @@ All the development done by Manish Kumar (2010991931) student of Chitkara Univer
 
 
 ## For Game Development and used purpose.
+
+![1](https://user-images.githubusercontent.com/76992617/233185012-d64c20d8-e66a-4b30-8beb-9b944470367b.png)
+![Screenshot (292)](https://user-images.githubusercontent.com/76992617/233185015-8b814e42-b077-45e9-8e22-315cc740d025.png)
+![Screenshot (294)](https://user-images.githubusercontent.com/76992617/233185029-1b5201d6-9a2b-413c-96a9-b199462a3222.png)
+![Screenshot (295)](https://user-images.githubusercontent.com/76992617/233185035-6f4c83e1-f0c4-45ba-9679-862ef3a6f7f3.png)
+![Screenshot (296)](https://user-images.githubusercontent.com/76992617/233185046-a264a209-9aa7-4ebb-bca3-1cf37209b2e8.png)
+![Screenshot (297)](https://user-images.githubusercontent.com/76992617/233185066-6892b02b-3db9-4055-9dae-d73025c834af.png)
+![Screenshot (298)](https://user-images.githubusercontent.com/76992617/233185075-4102d348-907b-43bf-a1cb-d50f2b08a0b3.png)
+![Screenshot (299)](https://user-images.githubusercontent.com/76992617/233185085-dd8890cc-20ce-4849-8333-b5e38b595f60.png)
+![Screenshot (300)](https://user-images.githubusercontent.com/76992617/233185097-50d82954-61e0-427d-bac9-9fdf602a86bc.png)
+![Screenshot (301)](https://user-images.githubusercontent.com/76992617/233185106-a8d6c49a-0c48-4089-9d1c-694efd378f77.png)
+![Screenshot (302)](https://user-images.githubusercontent.com/76992617/233185120-550f6c7d-0f06-44f9-b9a1-63af50bbbb0e.png)
+![Screenshot (303)](https://user-images.githubusercontent.com/76992617/233185135-c17f7f23-1469-44d6-883b-82e3d974d160.png)
