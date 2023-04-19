@@ -1,7 +1,10 @@
 import { React, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import axios from "axios";
 function Content(props) {
-  console.log(props);
+  const navigate = useNavigate();
+  console.log(props.user);
   const name = props.user?.email.split(" ")[0].toLocaleLowerCase();
 
   const [values, setValues] = useState({
@@ -171,6 +174,7 @@ function Content(props) {
                   </a>
                 </div>
               </div>
+
               <div class={`${ans_1 == "completed" ? "visible" : "invisible"}`}>
                 Task 1 Completed Congrats
               </div>

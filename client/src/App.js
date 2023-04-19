@@ -38,35 +38,44 @@ function App() {
     initialRef.current = false;
     getUser();
   }, [user]);
-  return (
-    <div>
-      <BrowserRouter>
-        <Navbar user={user} setUser={setUser} />
-        <Routes>
-          <Route path="/testing" element={<Testing test={test} />} />
-          <Route
-            path="/games"
-            element={
-              <Content user={user} correct={correct} incorrect={incorrect} />
-            }
-          />
-          <Route path="/dashboard" element={<Dashboard />} />
 
-          <Route path="/article1" element={<Article1 />} />
-          <Route path="/article2" element={<Article2 />} />
-          <Route path="/article3" element={<Article3 />} />
-          <Route
-            path="/login"
-            element={<Login user={user} getUser={getUser} />}
-          />
-          <Route path="/register" element={<Register />} />
-        </Routes>
-        {/* <Login /> */}
-        {/* <Dashboard /> */}
-      </BrowserRouter>
-      <Footer />
-    </div>
+  const [loading, setLoading] = useState(true);
+  const spinner = document.getElementById("spinner");
+  if (spinner) {
+    setTimeout(() => {
+      spinner.style.display = "none";
+      setLoading(false);
+    }, 2000);
+  }
+
+  return (
+    !loading && (
+      <div>
+        <BrowserRouter>
+          <Navbar user={user} setUser={setUser} />
+          <Routes>
+            <Route path="/testing" element={<Testing test={test} />} />
+            <Route path="/games" element={<Content user={user} />} />
+            <Route path="/dashboard" element={<Dashboard user={user} />} />
+
+            <Route path="/article1" element={<Article1 />} />
+            <Route path="/article2" element={<Article2 />} />
+            <Route path="/article3" element={<Article3 />} />
+            <Route
+              path="/login"
+              element={<Login user={user} getUser={getUser} />}
+            />
+            <Route path="/" element={<Content user={user} />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+          {/* <Login /> */}
+          {/* <Dashboard /> */}
+        </BrowserRouter>
+        <Footer />
+      </div>
+    )
   );
+  // );
 }
 
 export default App;

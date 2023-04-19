@@ -7,7 +7,7 @@ function Article2() {
         <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
-              class="object-cover object-center rounded"
+              class="object-cover h-[65vh] rounded-3xl	 object-center rounded"
               alt="hero"
               src="https://i.insider.com/5696bf1ee6183e26008b937f?width=761&format=jpeg"
             />

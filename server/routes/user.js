@@ -91,4 +91,12 @@ router.get("/", requireLogin, async (req, res) => {
   }
 });
 
+//FETCHING ALL DATA
+// router.get("/fetch", (req, res) => {
+//   User.find(err,docs)=>{
+//     if(!err)
+//       console.log(docs);
+//     else
+//   };
+// });
 module.exports = router;

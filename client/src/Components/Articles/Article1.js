@@ -7,12 +7,12 @@ function Article1() {
         <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
-              class="object-cover object-center rounded"
+              class="object-cover rounded-3xl object-center rounded"
               alt="hero"
               src="https://m.media-amazon.com/images/I/81S9nEpO9KL._SL1500_.jpg"
             />
           </div>
-          <div class="lg:flex-grow bg-gray-100 rounded-3xl m-1.5 md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+          <div class="lg:flex-grow h-[71vh] bg-gray-100 rounded-3xl m-1.5 md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
             <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
               What is Puzzle?
               <br class="hidden lg:inline-block" />

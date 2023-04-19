@@ -33,6 +33,9 @@ function Navbar(props) {
           <a className="mr-5 hover:text-yellow-100	" href="/article3">
             Problem3
           </a>
+          <a className="mr-5 hover:text-yellow-100	" href="/dashboard">
+            DashBoard
+          </a>
         </nav>
         <p className="mr-5 text-red-500 hover:text-red-600">Welcome {name}</p>
         <button

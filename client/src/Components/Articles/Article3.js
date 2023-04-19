@@ -7,7 +7,7 @@ function Article3() {
         <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
-              class="object-cover object-center rounded"
+              class="object-cover  h-[76vh] rounded-3xl object-center rounded"
               alt="hero"
               src="https://www.wikihow.com/images/thumb/8/8d/Play-Hide-and-Seek-Tiggy-Step-3-Version-3.jpg/v4-460px-Play-Hide-and-Seek-Tiggy-Step-3-Version-3.jpg.webp"
             />

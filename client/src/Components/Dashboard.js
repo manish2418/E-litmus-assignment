@@ -1,7 +1,12 @@
 import React from "react";
 import ProgressBar from "@ramonak/react-progress-bar";
 
-function Dashboard() {
+function Dashboard(props) {
+  const val1 = props.user?.count.ans1;
+  const val2 = props.user?.count.ans2;
+  const val3 = props.user?.count.ans3;
+  const answer = (val1 + val2 + val3 + 0) / 3;
+  console.log(props);
   return (
     <>
       <div>
@@ -41,7 +46,7 @@ function Dashboard() {
                   <div class="flex-grow">
                     {/* <p class="leading-relaxed text-base">Porgress Report</p> */}
                     <br />
-                    <ProgressBar completed={60} />
+                    <ProgressBar completed={answer * 100} />
                   </div>
                 </div>
               </div>
