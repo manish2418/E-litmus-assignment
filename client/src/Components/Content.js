@@ -9,55 +9,35 @@ function Content(props) {
   var answer1 = props.user?.answer.ans_1;
   var answer2 = props.user?.answer.ans_2;
   var answer3 = props.user?.answer.ans_3;
-
-  const [check, setCheck] = useState({
-    check1: val1 > 0 ? "invisible" : "visible",
-    check2: val2 > 0 ? "invisible" : "visible",
-    check3: val3 > 0 ? "invisible" : "visible",
-  });
-
+  console.log(props);
   const [incorrect, setincorrect] = useState(0);
   const [data, setdata] = useState({
-    ans_1: answer1,
-    ans_2: answer2,
-    ans_3: answer3,
-  });
-  const [data2, setdata2] = useState({
-    ans1_count: val1,
-    ans2_count: val2,
-    ans3_count: val3,
+    ans_1: answer1 === undefined ? "" : answer1,
+    ans_2: answer2 === undefined ? "" : answer2,
+    ans_3: answer3 === undefined ? "" : answer3,
   });
   const { ans_1, ans_2, ans_3 } = data;
-  const { check1, check2, check3 } = check;
-  const { ans1_count, ans2_count, ans3_count } = data2;
+
   const handleChange = async (e) => {
     setdata({ ...data, [e.target.name]: e.target.value });
   };
 
-  useEffect(() => {
-    if (ans1_count === 1) {
-      console.log("helo1");
-      setCheck({ ...check, check1: "invisible" });
-    }
-    if (ans2_count === 1) {
-      console.log("helo2");
-      setCheck({ ...check, check2: "invisible" });
-    }
-    if (ans3_count === 1) {
-      console.log("helo3");
-      setCheck({ ...check, check3: "invisible" });
-    }
-    if (name) {
+  const handleSubmit = async (e) => {
+    //PUZZLE 1
+    let x = 0;
+    if (ans_1 == "development") {
+      x = 1;
+
       axios.post(
         "http://localhost:5043/auth/check",
         {
-          ans1: ans1_count,
-          ans2: ans2_count,
-          ans3: ans3_count,
+          ans1: 1,
+          ans2: val2,
+          ans3: val3,
           email: name,
-          ans_1: ans_1,
-          ans_2: ans_2,
-          ans_3: ans_3,
+          ans_1: "completed",
+          ans_2: answer2,
+          ans_3: answer3,
         },
         {
           headers: {
@@ -65,29 +45,6 @@ function Content(props) {
           },
         }
       );
-    }
-  }, [
-    ans1_count,
-    ans2_count,
-    ans3_count,
-    check1,
-    check2,
-    check3,
-    val1,
-    val2,
-    val3,
-  ]);
-
-  const handleSubmit = async (e) => {
-    //PUZZLE 1
-    let x = 0;
-    if (ans_1 == "development") {
-      x = 1;
-      setCheck({ ...check, check1: "invisible" });
-      setdata2({
-        ...data2,
-        ans1_count: 1,
-      });
       setdata({ ...data, ans_1: "completed" });
     }
 
@@ -95,25 +52,46 @@ function Content(props) {
     else if (ans_2 == "Y2ljYWRhIDMzMDEgZXZlcnl3aGVyZQ==") {
       x = 1;
 
-      setCheck({ ...check, check2: "invisible" });
-      setdata2({
-        ...data2,
-
-        ans2_count: 1,
-      });
+      axios.post(
+        "http://localhost:5043/auth/check",
+        {
+          ans1: val1,
+          ans2: 1,
+          ans3: val3,
+          email: name,
+          ans_1: answer1,
+          ans_2: "completed",
+          ans_3: answer3,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       setdata({ ...data, ans_2: "completed" });
     }
 
     //PUZZLE 3
     else if (ans_3 == "26") {
       x = 1;
-      setCheck({ ...check, check3: "invisible" });
-      setdata2({
-        ...data2,
-
-        ans3_count: 1,
-      });
-
+      axios.post(
+        "http://localhost:5043/auth/check",
+        {
+          ans1: val1,
+          ans2: val2,
+          ans3: 1,
+          email: name,
+          ans_1: answer1,
+          ans_2: answer2,
+          ans_3: "completed",
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       setdata({ ...data, ans_3: "completed" });
     }
 
@@ -126,21 +104,34 @@ function Content(props) {
     if (incorrect === -2) {
       alert("You Failed the Puzzle");
       setincorrect(0);
-      setCheck({
-        ...check,
-        check1: "visible",
-        check2: "visible",
-        check3: "visible",
-      });
-      setdata2({ ...data, ans1_count: 0, ans2_count: 0, ans3_count: 0 });
+      axios.post(
+        "http://localhost:5043/auth/check",
+        {
+          ans1: 0,
+          ans2: 0,
+          ans3: 0,
+          email: name,
+          ans_1: "",
+          ans_2: "",
+          ans_3: "",
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       setdata({ ...data, ans_1: "", ans_2: "", ans_3: "" });
     }
   };
-
-  // console.log(correct + " " + incorrect);
+  console.log(data);
   return (
     <>
-      <section class={`${check1} text-gray-600 body-font relative m-3.5`}>
+      <section
+        class={`${
+          ans_1 == "completed" ? "invisible" : "visible"
+        } text-gray-600 body-font relative m-3.5`}
+      >
         <div class="container px-5 py-24 mx-auto bg-gray-100 rounded-3xl opacity-80 w-1/2 ">
           <div class="flex flex-col text-center w-full mb-12  ">
             <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
@@ -164,7 +155,7 @@ function Content(props) {
                   </a>
                 </div>
               </div>
-              <div class={`${check1 == "visible" ? "invisible" : "visible"}`}>
+              <div class={`${ans_1 == "completed" ? "visible" : "invisible"}`}>
                 Task 1 Completed Congrats
               </div>
               <div class="p-2 w-full">
@@ -196,7 +187,11 @@ function Content(props) {
       </section>
       {/* Second Game */}
       <>
-        <section class={`${check2} text-gray-600 body-font relative`}>
+        <section
+          class={`${
+            ans_2 == "completed" ? "invisible" : "visible"
+          } text-gray-600 body-font relative m-3.5`}
+        >
           <div class="container px-5 py-24 mx-auto bg-gray-100 rounded-3xl opacity-80 w-1/2">
             <div class="flex flex-col text-center w-full mb-12">
               <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
@@ -220,7 +215,9 @@ function Content(props) {
                     </a>
                   </div>
                 </div>
-                <div class={`${check2 == "visible" ? "invisible" : "visible"}`}>
+                <div
+                  class={`${ans_2 == "completed" ? "visible" : "invisible"}`}
+                >
                   Task 2 Completed Congrats
                 </div>
                 <div class="p-2 w-full">
@@ -256,7 +253,11 @@ function Content(props) {
       </>
       {/* Third Game */}
       <>
-        <section class={`${check3} text-gray-600 body-font relative m-3.5`}>
+        <section
+          class={`${
+            ans_3 == "completed" ? "invisible" : "visible"
+          } text-gray-600 body-font relative m-3.5`}
+        >
           <div class="container px-5 py-24 mx-auto bg-gray-100 rounded-3xl opacity-80 w-1/2">
             <div class="flex flex-col text-center w-full mb-12">
               <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
@@ -281,7 +282,9 @@ function Content(props) {
                     </a>
                   </div>
                 </div>
-                <div class={`${check3 == "visible" ? "invisible" : "visible"}`}>
+                <div
+                  class={`${ans_3 == "completed" ? "visible" : "invisible"}`}
+                >
                   Task 3 Completed Congrats
                 </div>
                 <div class="p-2 w-full">
