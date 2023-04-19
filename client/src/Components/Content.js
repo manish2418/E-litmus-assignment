@@ -3,8 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
 function Content(props) {
-  const navigate = useNavigate();
-  console.log(props.user);
   const name = props.user?.email.split(" ")[0].toLocaleLowerCase();
 
   const [values, setValues] = useState({
@@ -175,7 +173,11 @@ function Content(props) {
                 </div>
               </div>
 
-              <div class={`${ans_1 == "completed" ? "visible" : "invisible"}`}>
+              <div
+                class={`${
+                  ans_1 == "completed" ? "visible" : "invisible"
+                } text-white`}
+              >
                 Task 1 Completed Congrats
               </div>
               <div class="p-2 w-full">
@@ -236,7 +238,9 @@ function Content(props) {
                   </div>
                 </div>
                 <div
-                  class={`${ans_2 == "completed" ? "visible" : "invisible"}`}
+                  class={`${
+                    ans_2 == "completed" ? "visible" : "invisible"
+                  } text-white`}
                 >
                   Task 2 Completed Congrats
                 </div>
@@ -303,7 +307,9 @@ function Content(props) {
                   </div>
                 </div>
                 <div
-                  class={`${ans_3 == "completed" ? "visible" : "invisible"}`}
+                  class={`${
+                    ans_3 == "completed" ? "visible" : "invisible"
+                  } text-white`}
                 >
                   Task 3 Completed Congrats
                 </div>

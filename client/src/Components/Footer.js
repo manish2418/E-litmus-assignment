@@ -60,7 +60,11 @@ function Footer() {
                   <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
                 </svg>
               </a>
-              <a class="ml-3 text-white">
+              <a
+                class="ml-3 text-white"
+                target="_blank"
+                href="https://www.linkedin.com/in/manishkumar2901/"
+              >
                 <svg
                   fill="currentColor"
                   stroke="currentColor"

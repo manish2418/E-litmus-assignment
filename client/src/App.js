@@ -54,10 +54,10 @@ function App() {
         <BrowserRouter>
           <Navbar user={user} setUser={setUser} />
           <Routes>
+            user && (
             <Route path="/testing" element={<Testing test={test} />} />
             <Route path="/games" element={<Content user={user} />} />
             <Route path="/dashboard" element={<Dashboard user={user} />} />
-
             <Route path="/article1" element={<Article1 />} />
             <Route path="/article2" element={<Article2 />} />
             <Route path="/article3" element={<Article3 />} />
@@ -66,7 +66,7 @@ function App() {
               element={<Login user={user} getUser={getUser} />}
             />
             <Route path="/" element={<Content user={user} />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/register" element={<Register />} />)
           </Routes>
           {/* <Login /> */}
           {/* <Dashboard /> */}

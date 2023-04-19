@@ -5,6 +5,9 @@ function Dashboard(props) {
   const val1 = props.user?.count.ans1;
   const val2 = props.user?.count.ans2;
   const val3 = props.user?.count.ans3;
+  const names = props.user?.name === undefined ? "User" : props.user.name;
+  const email =
+    props.user?.email === undefined ? "User@gmail.com" : props.user?.email;
   const answer = (val1 + val2 + val3 + 0) / 3;
   console.log(props);
   return (
@@ -13,10 +16,8 @@ function Dashboard(props) {
         <section class="text-gray-600 body-font">
           <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-col text-center w-full mb-20">
-              <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">
-                ROOF PARTY POLAROID
-              </h2>
-              <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">
+              <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1"></h2>
+              <h1 class="sm:text-3xl  text-2xl font-medium title-font text-white ">
                 PROGRESS DASHBOARD
               </h1>
             </div>
@@ -43,10 +44,13 @@ function Dashboard(props) {
                       Progress Report
                     </h2>
                   </div>
+                  <h3 class="text-gray-900 text-lg title-font font-medium">
+                    {names} :- {email}
+                  </h3>
                   <div class="flex-grow">
                     {/* <p class="leading-relaxed text-base">Porgress Report</p> */}
                     <br />
-                    <ProgressBar completed={answer * 100} />
+                    <ProgressBar completed={Math.round(answer * 100)} />
                   </div>
                 </div>
               </div>
