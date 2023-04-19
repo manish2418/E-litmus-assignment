@@ -3,18 +3,26 @@ import axios from "axios";
 function Content(props) {
   console.log(props);
   const name = props.user?.email.split(" ")[0].toLocaleLowerCase();
-  var val1 = props.user?.count.ans1;
-  var val2 = props.user?.count.ans2;
-  var val3 = props.user?.count.ans3;
-  var answer1 = props.user?.answer.ans_1;
-  var answer2 = props.user?.answer.ans_2;
-  var answer3 = props.user?.answer.ans_3;
-  console.log(props);
+
+  const [values, setValues] = useState({
+    val1: props.user?.count.ans1 || 0,
+    val2: props.user?.count.ans2 || 0,
+    val3: props.user?.count.ans3 || 0,
+  });
+  const { val1, val2, val3 } = values;
+
+  const [Answer, setAnswer] = useState({
+    answer1: props.user?.answer.ans_1 || "",
+    answer2: props.user?.answer.ans_2 || "",
+    answer3: props.user?.answer.ans_3 || "",
+  });
+  const { answer1, answer2, answer3 } = Answer;
+
   const [incorrect, setincorrect] = useState(0);
   const [data, setdata] = useState({
-    ans_1: answer1 === undefined ? "" : answer1,
-    ans_2: answer2 === undefined ? "" : answer2,
-    ans_3: answer3 === undefined ? "" : answer3,
+    ans_1: answer1,
+    ans_2: answer2,
+    ans_3: answer3,
   });
   const { ans_1, ans_2, ans_3 } = data;
 
@@ -45,6 +53,8 @@ function Content(props) {
           },
         }
       );
+      setAnswer({ ...Answer, answer1: "completed" });
+      setValues({ ...values, val1: 1 });
       setdata({ ...data, ans_1: "completed" });
     }
 
@@ -69,6 +79,9 @@ function Content(props) {
           },
         }
       );
+      setAnswer({ ...Answer, answer2: "completed" });
+      setValues({ ...values, val2: 1 });
+
       setdata({ ...data, ans_2: "completed" });
     }
 
@@ -92,6 +105,9 @@ function Content(props) {
           },
         }
       );
+      setAnswer({ ...Answer, answer3: "completed" });
+      setValues({ ...values, val3: 1 });
+
       setdata({ ...data, ans_3: "completed" });
     }
 
@@ -124,12 +140,12 @@ function Content(props) {
       setdata({ ...data, ans_1: "", ans_2: "", ans_3: "" });
     }
   };
-  console.log(data);
+  console.log(values);
   return (
     <>
       <section
         class={`${
-          ans_1 == "completed" ? "invisible" : "visible"
+          answer1 == "completed" ? "invisible" : "visible"
         } text-gray-600 body-font relative m-3.5`}
       >
         <div class="container px-5 py-24 mx-auto bg-gray-100 rounded-3xl opacity-80 w-1/2 ">
