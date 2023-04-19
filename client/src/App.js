@@ -17,23 +17,21 @@ import Login from "./Components/Login";
 import Register from "./Components/Register";
 
 function App() {
-  const [test, settest] = useState(0);
-  const [correct, setcorrect] = useState(0);
-  const [incorrect, setincorrect] = useState(0);
-
   const initialRef = useRef(true);
   const [user, setUser] = useState();
+
   const getUser = async () => {
-    const res = await axios.get(
-      "https://e-litmus-assignment-production.up.railway.app/auth",
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      }
-    );
+    const res = await axios.get("http://localhost:5043/auth", {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    // if(res.data!==null){
+    //   navigate("/")
+    // }
     setUser(res.data);
   };
+
   useEffect(() => {
     if (!initialRef.current) {
       return;
@@ -58,7 +56,6 @@ function App() {
           <Navbar user={user} setUser={setUser} />
           <Routes>
             user && (
-            <Route path="/testing" element={<Testing test={test} />} />
             <Route path="/games" element={<Content user={user} />} />
             <Route path="/dashboard" element={<Dashboard user={user} />} />
             <Route path="/article1" element={<Article1 />} />

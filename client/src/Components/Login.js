@@ -37,7 +37,7 @@ const Login = ({ user, getUser }) => {
     try {
       setData({ ...data, error: null });
       const res = await axios.post(
-        "https://e-litmus-assignment-production.up.railway.app/auth/login",
+        "http://localhost:5043/auth/login",
         { email, password },
         {
           headers: {
