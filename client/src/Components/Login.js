@@ -37,7 +37,7 @@ const Login = ({ user, getUser }) => {
     try {
       setData({ ...data, error: null });
       const res = await axios.post(
-        "http://localhost:5043/auth/login",
+        "https://e-litmus-assignment.vercel.app/auth/login",
         { email, password },
         {
           headers: {
