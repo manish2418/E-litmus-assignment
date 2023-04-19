@@ -24,7 +24,7 @@ function App() {
   const initialRef = useRef(true);
   const [user, setUser] = useState();
   const getUser = async () => {
-    const res = await axios.get("http://localhost:5043/auth", {
+    const res = await axios.get("https://e-litmus-assignment.vercel.app/auth", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

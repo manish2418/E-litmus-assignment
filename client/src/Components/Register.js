@@ -8,7 +8,7 @@ const Register = (props) => {
   const [user, setUser] = useState(val);
 
   const getUser = async () => {
-    const res = await Axios.get("http://localhost:5043/auth", {
+    const res = await Axios.get("https://e-litmus-assignment.vercel.app/auth", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -35,7 +35,7 @@ const Register = (props) => {
     e.preventDefault();
     try {
       await Axios.post(
-        "http://localhost:5043/auth/register",
+        "https://e-litmus-assignment.vercel.app/auth/register",
         { name, email, password },
         {
           headers: {
