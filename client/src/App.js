@@ -1,0 +1,72 @@
+import React, { useState, useEffect, intialRef, useRef } from "react";
+import axios from "axios";
+import Navbar from "./Components/Navbar";
+import Content from "./Components/Content";
+import Footer from "./Components/Footer";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+// import Login from "./Components/Login";
+import Dashboard from "./Components/Dashboard";
+import "./App.css";
+// import Route from "./Components/Routes";
+import Testing from "./Components/Testing";
+import Article1 from "./Components/Articles/Article1";
+import Article2 from "./Components/Articles/Article2";
+import Article3 from "./Components/Articles/Article3";
+
+import Login from "./Components/Login";
+import Register from "./Components/Register";
+
+function App() {
+  const [test, settest] = useState(0);
+  const [correct, setcorrect] = useState(0);
+  const [incorrect, setincorrect] = useState(0);
+
+  const initialRef = useRef(true);
+  const [user, setUser] = useState();
+  const getUser = async () => {
+    const res = await axios.get("http://localhost:5043/auth", {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    setUser(res.data);
+  };
+  useEffect(() => {
+    if (!initialRef.current) {
+      return;
+    }
+    initialRef.current = false;
+    getUser();
+  }, [user]);
+  return (
+    <div>
+      <BrowserRouter>
+        <Navbar user={user} setUser={setUser} />
+        <Routes>
+          <Route path="/testing" element={<Testing test={test} />} />
+          <Route
+            path="/games"
+            element={
+              <Content user={user} correct={correct} incorrect={incorrect} />
+            }
+          />
+          <Route path="/dashboard" element={<Dashboard />} />
+
+          <Route path="/article1" element={<Article1 />} />
+          <Route path="/article2" element={<Article2 />} />
+          <Route path="/article3" element={<Article3 />} />
+          <Route
+            path="/login"
+            element={<Login user={user} getUser={getUser} />}
+          />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+        {/* <Login /> */}
+        {/* <Dashboard /> */}
+      </BrowserRouter>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
