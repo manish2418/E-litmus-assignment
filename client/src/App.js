@@ -73,8 +73,9 @@ function App() {
           </Routes>
           {/* <Login /> */}
           {/* <Dashboard /> */}
+          <Footer />
         </BrowserRouter>
-        <Footer />
+        
       </div>
     )
   );

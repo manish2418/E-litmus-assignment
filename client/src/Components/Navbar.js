@@ -1,5 +1,5 @@
 import { React } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 
 function Navbar(props) {
   const navigate = useNavigate();
@@ -14,28 +14,20 @@ function Navbar(props) {
   return (
     <header className="text-gray-600 body-font">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <a
-          href="/"
+        <Link
+          to="/"
           className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
         >
           <span className="ml-3 text-xl text-white">-Puzzle Buzzer-</span>
-        </a>
+        </Link>
+
         <nav className="md:ml-auto flex flex-wrap items-center text-white text-base justify-center">
-          <a className="mr-5 hover:text-yellow-100	" href="/games">
-            Games
-          </a>
-          <a className="mr-5 hover:text-yellow-100" href="/article1">
-            Problem1
-          </a>
-          <a className="mr-5 hover:text-yellow-100" href="/article2">
-            Problem2
-          </a>
-          <a className="mr-5 hover:text-yellow-100	" href="/article3">
-            Problem3
-          </a>
-          <a className="mr-5 hover:text-yellow-100	" href="/dashboard">
-            DashBoard
-          </a>
+          
+          <Link className="mr-5 hover:text-yellow-100	" to="/games">Games</Link>
+          <Link className="mr-5 hover:text-yellow-100	" to="/article1">Problem1</Link>
+          <Link className="mr-5 hover:text-yellow-100	" to="/article2">Problem2</Link>
+          <Link className="mr-5 hover:text-yellow-100	" to="/article3">Problem3</Link>
+          <Link className="mr-5 hover:text-yellow-100	" to="/dashboard">DashBoard</Link>
         </nav>
         <p className="mr-5 text-red-500 hover:text-red-600">Welcome {name}</p>
         <button

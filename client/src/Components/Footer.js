@@ -1,24 +1,24 @@
 import React from "react";
-
+import {Link} from "react-router-dom"
 function Footer() {
   return (
     <>
       <div>
         <footer class="text-gray-600 body-font">
           <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-            <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+            <Link to="/" class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
               <span class="ml-3 text-white text-xl">-Puzzle Buzzer-</span>
-            </a>
+            </Link>
             <p class="text-sm text-white sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
               @git-manish2418
-              <a
-                href="https://github.com/manish2418"
+              <Link
+                to="https://github.com/manish2418"
                 class="text-gray-600 ml-1 text-white"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 -Made By Manish Kumar
-              </a>
+              </Link>
             </p>
             <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 text-white justify-center sm:justify-start">
               <a class="text-white">
@@ -60,10 +60,10 @@ function Footer() {
                   <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
                 </svg>
               </a>
-              <a
+              <Link
                 class="ml-3 text-white"
                 target="_blank"
-                href="https://www.linkedin.com/in/manishkumar2901/"
+                to="https://www.linkedin.com/in/manishkumar2901/"
               >
                 <svg
                   fill="currentColor"
@@ -80,7 +80,7 @@ function Footer() {
                   ></path>
                   <circle cx="4" cy="4" r="2" stroke="none"></circle>
                 </svg>
-              </a>
+              </Link>
             </span>
           </div>
         </footer>
