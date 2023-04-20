@@ -1,5 +1,5 @@
 import { React } from "react";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Navbar(props) {
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ function Navbar(props) {
     navigate("/login");
   };
   console.log(props);
-  const name = props.user?.name.split(" ")[0].toLocaleLowerCase();
+  const name = props.user?.name?.split(" ")[0].toLocaleLowerCase();
   const isLoggedIn = !!name;
   return (
     <header className="text-gray-600 body-font">
@@ -22,12 +22,21 @@ function Navbar(props) {
         </Link>
 
         <nav className="md:ml-auto flex flex-wrap items-center text-white text-base justify-center">
-          
-          <Link className="mr-5 hover:text-yellow-100	" to="/games">Games</Link>
-          <Link className="mr-5 hover:text-yellow-100	" to="/article1">Problem1</Link>
-          <Link className="mr-5 hover:text-yellow-100	" to="/article2">Problem2</Link>
-          <Link className="mr-5 hover:text-yellow-100	" to="/article3">Problem3</Link>
-          <Link className="mr-5 hover:text-yellow-100	" to="/dashboard">DashBoard</Link>
+          <Link className="mr-5 hover:text-yellow-100	" to="/games">
+            Games
+          </Link>
+          <Link className="mr-5 hover:text-yellow-100	" to="/article1">
+            Problem1
+          </Link>
+          <Link className="mr-5 hover:text-yellow-100	" to="/article2">
+            Problem2
+          </Link>
+          <Link className="mr-5 hover:text-yellow-100	" to="/article3">
+            Problem3
+          </Link>
+          <Link className="mr-5 hover:text-yellow-100	" to="/dashboard">
+            DashBoard
+          </Link>
         </nav>
         <p className="mr-5 text-red-500 hover:text-red-600">Welcome {name}</p>
         <button

@@ -3,19 +3,19 @@ import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
 function Content(props) {
-  const name = props.user?.email.split(" ")[0].toLocaleLowerCase();
+  const name = props.user?.email?.split(" ")[0].toLocaleLowerCase();
 
   const [values, setValues] = useState({
-    val1: props.user?.count.ans1 || 0,
-    val2: props.user?.count.ans2 || 0,
-    val3: props.user?.count.ans3 || 0,
+    val1: props.user?.count?.ans1 || 0,
+    val2: props.user?.count?.ans2 || 0,
+    val3: props.user?.count?.ans3 || 0,
   });
   const { val1, val2, val3 } = values;
 
   const [Answer, setAnswer] = useState({
-    answer1: props.user?.answer.ans_1 || "",
-    answer2: props.user?.answer.ans_2 || "",
-    answer3: props.user?.answer.ans_3 || "",
+    answer1: props.user?.answer?.ans_1 || "",
+    answer2: props.user?.answer?.ans_2 || "",
+    answer3: props.user?.answer?.ans_3 || "",
   });
   const { answer1, answer2, answer3 } = Answer;
 
@@ -38,7 +38,7 @@ function Content(props) {
       x = 1;
 
       axios.post(
-        "https://e-litmus-assignment-production.up.railway.app/auth/check",
+        "http://localhost:5043/auth/check",
         {
           ans1: 1,
           ans2: val2,
@@ -64,7 +64,7 @@ function Content(props) {
       x = 1;
 
       axios.post(
-        "https://e-litmus-assignment-production.up.railway.app/auth/check",
+        "http://localhost:5043/auth/check",
         {
           ans1: val1,
           ans2: 1,
@@ -90,7 +90,7 @@ function Content(props) {
     else if (ans_3 == "26") {
       x = 1;
       axios.post(
-        "https://e-litmus-assignment-production.up.railway.app/auth/check",
+        "http://localhost:5043/auth/check",
         {
           ans1: val1,
           ans2: val2,

@@ -21,14 +21,11 @@ function App() {
   const [user, setUser] = useState();
 
   const getUser = async () => {
-    const res = await axios.get(
-      "https://e-litmus-assignment-production.up.railway.app/auth",
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      }
-    );
+    const res = await axios.get("http://localhost:5043/auth/", {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
     // if(res.data!==null){
     //   navigate("/")
     // }
@@ -75,7 +72,6 @@ function App() {
           {/* <Dashboard /> */}
           <Footer />
         </BrowserRouter>
-        
       </div>
     )
   );

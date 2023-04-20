@@ -8,14 +8,11 @@ const Register = (props) => {
   const [user, setUser] = useState(val);
 
   const getUser = async () => {
-    const res = await Axios.get(
-      "https://e-litmus-assignment-production.up.railway.app/auth",
-      {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      }
-    );
+    const res = await Axios.get("http://localhost:5043/auth", {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
     if (res.data != null) {
       navigate("/");
     }
@@ -38,7 +35,7 @@ const Register = (props) => {
     e.preventDefault();
     try {
       await Axios.post(
-        "https://e-litmus-assignment-production.up.railway.app/auth/register",
+        "http://localhost:5043/auth/register",
         { name, email, password },
         {
           headers: {
