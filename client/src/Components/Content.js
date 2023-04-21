@@ -37,7 +37,7 @@ function Content(props) {
       x = 1;
 
       axios.post(
-        "http://localhost:5043/auth/check",
+        "https://e-litmus-assignment-production.up.railway.app/auth/check",
         {
           ans1: 1,
           ans2: val2,
@@ -63,7 +63,7 @@ function Content(props) {
       x = 1;
 
       axios.post(
-        "http://localhost:5043/auth/check",
+        "https://e-litmus-assignment-production.up.railway.app/auth/check",
         {
           ans1: val1,
           ans2: 1,
@@ -89,7 +89,7 @@ function Content(props) {
     else if (ans_3 === "26") {
       x = 1;
       axios.post(
-        "http://localhost:5043/auth/check",
+        "https://e-litmus-assignment-production.up.railway.app/auth/check",
         {
           ans1: val1,
           ans2: val2,

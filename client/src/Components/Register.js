@@ -3,11 +3,14 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 const Register = (props) => {
   const getUser = async () => {
-    const res = await Axios.get("http://localhost:5043/auth/getdetail", {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    });
+    const res = await Axios.get(
+      "https://e-litmus-assignment-production.up.railway.app/auth",
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    );
     if (res.data != null) {
       navigate("/");
     }
@@ -30,7 +33,7 @@ const Register = (props) => {
     e.preventDefault();
     try {
       await Axios.post(
-        "http://localhost:5043/auth/register",
+        "https://e-litmus-assignment-production.up.railway.app/auth/register",
         { name, email, password },
         {
           headers: {

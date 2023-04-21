@@ -1,9 +1,18 @@
 const jwt = require("jsonwebtoken");
 
-exports.requireLogin = (req, res, next) => {
+function resolveAfter5Seconds(x) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(x);
+    }, 5000);
+  });
+}
+
+exports.requireLogin = async (req, res, next) => {
+  let val = await resolveAfter5Seconds(req.headers.authorization);
+  console.log(val);
   try {
-    console.log(req.headers.authorization);
-    if (req.headers.authorization) {
+    if (val) {
       const token = req.headers.authorization.split(" ")[1];
       //verify token
 
@@ -14,7 +23,7 @@ exports.requireLogin = (req, res, next) => {
 
       next();
     } else {
-      return res.status(400).json({ message: "Unauthorized" });
+      res.status(400).json({ message: "Unauthorized" });
     }
   } catch (err) {
     console.log("Something went wrong");

@@ -21,7 +21,7 @@ function App() {
   const [user, setUser] = useState();
 
   const getUser = async () => {
-    const res = await axios.get("http://localhost:5043/auth/getdetail", {
+    const res = await axios.get("http://localhost:5043/auth", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

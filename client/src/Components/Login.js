@@ -1,7 +1,6 @@
 import axios from "axios";
 import { React, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "./Navbar";
 import LoadingSpinner from "./Spinner";
 const Login = ({ user, getUser }) => {
   const navigate = useNavigate();
@@ -37,7 +36,7 @@ const Login = ({ user, getUser }) => {
     try {
       setData({ ...data, error: null });
       const res = await axios.post(
-        "http://localhost:5043/auth/login",
+        "https://e-litmus-assignment-production.up.railway.app/auth/login",
         { email, password },
         {
           headers: {
