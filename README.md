@@ -5,14 +5,14 @@
 #1Title and Overview
 
 Welcome to Puzzle Buzzer online game .Here you are going to experience amazing level of joy and this gonna blow your mind.
-It I a treasureHunt Game which help you too brainstrome. This game made for the fun and solving the problem using clues.
+It is a treasureHunt Game which help you too brainstrome. This game made for the fun and solving the problem using clues.
 The game consist of 3 Rounds and for getting 100% score user must have to clear all the rounds.
 
 Game 1  
 This game is based on your English Learning Skill here you are provided with some English Based Question like synonyms, antonyms etc.
 Note:- In this round you have to visit a referral link and find out the correct one from the mentioned answers.
            5 clues were provided for the help in case you have difficulty to solve the puzzle trying to read clues carefully.
-           You have return the in smaller case of alphabets.
+           You have return the answer in smaller case of alphabets.
 
 
 Game 2
