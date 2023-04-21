@@ -1,5 +1,4 @@
-import { React, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { React, useState } from "react";
 
 import axios from "axios";
 function Content(props) {
@@ -34,7 +33,7 @@ function Content(props) {
   const handleSubmit = async (e) => {
     //PUZZLE 1
     let x = 0;
-    if (ans_1 == "development") {
+    if (ans_1 === "development") {
       x = 1;
 
       axios.post(
@@ -60,7 +59,7 @@ function Content(props) {
     }
 
     //PUZZLE 2
-    else if (ans_2 == "Y2ljYWRhIDMzMDEgZXZlcnl3aGVyZQ==") {
+    else if (ans_2 === "Y2ljYWRhIDMzMDEgZXZlcnl3aGVyZQ===") {
       x = 1;
 
       axios.post(
@@ -87,7 +86,7 @@ function Content(props) {
     }
 
     //PUZZLE 3
-    else if (ans_3 == "26") {
+    else if (ans_3 === "26") {
       x = 1;
       axios.post(
         "http://localhost:5043/auth/check",
@@ -112,7 +111,7 @@ function Content(props) {
       setdata({ ...data, ans_3: "completed" });
     }
 
-    // if (ans2 == "Manish") {
+    // if (ans2 === "Manish") {
     // }
     if (x === 0) {
       setincorrect(incorrect - 1);
@@ -145,59 +144,65 @@ function Content(props) {
   return (
     <>
       <section
-        class={`${
-          answer1 == "completed" ? "invisible" : "visible"
+        className={`${
+          answer1 === "completed" ? "invisible" : "visible"
         } text-gray-600 body-font relative m-3.5`}
       >
-        <div class="container px-5 py-24 mx-auto bg-gray-100 rounded-3xl opacity-80 w-1/2 ">
-          <div class="flex flex-col text-center w-full mb-12  ">
-            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+        <div className="container px-5 py-24 mx-auto bg-gray-100 rounded-3xl opacity-80 w-1/2 ">
+          <div className="flex flex-col text-center w-full mb-12  ">
+            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
               Game Number 1
             </h1>
-            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
               Gaming Instruction
             </p>
           </div>
-          <div class="lg:w-1/2 md:w-2/3 mx-auto ">
-            <div class="flex flex-wrap -m-2">
-              <div class="p-2 ">
-                <div class="relative">
-                  <label for="name" class="leading-7 text-sm text-black">
+          <div className="lg:w-1/2 md:w-2/3 mx-auto ">
+            <div className="flex flex-wrap -m-2">
+              <div className="p-2 ">
+                <div className="relative">
+                  <label
+                    htmlFor="name"
+                    className="leading-7 text-sm text-black"
+                  >
                     Problem 1: Search answer in given problem statement!
                   </label>
                   <br />
                   <br />
-                  <a class="text-blue-600" target="_blank" href="/article1">
+                  <a className="text-blue-600" target="_blank" href="/article1">
                     Problem Statement
                   </a>
                 </div>
               </div>
 
               <div
-                class={`${
-                  ans_1 == "completed" ? "visible" : "invisible"
+                className={`${
+                  ans_1 === "completed" ? "visible" : "invisible"
                 } text-white`}
               >
                 Task 1 Completed Congrats
               </div>
-              <div class="p-2 w-full">
-                <div class="relative">
-                  <label for="message" class="leading-7 text-sm text-gray-600">
+              <div className="p-2 w-full">
+                <div className="relative">
+                  <label
+                    htmlFor="message"
+                    className="leading-7 text-sm text-gray-600"
+                  >
                     Answer
                   </label>
                   <input
                     type="text"
                     id="ans-text"
                     name="ans_1"
-                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                     value={ans_1}
                     onChange={handleChange}
                   />
                 </div>
               </div>
-              <div class="p-2 w-full">
+              <div className="p-2 w-full">
                 <button
-                  class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                  className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
                   onClick={handleSubmit}
                 >
                   Submit
@@ -210,45 +215,52 @@ function Content(props) {
       {/* Second Game */}
       <>
         <section
-          class={`${
-            ans_2 == "completed" ? "invisible" : "visible"
+          className={`${
+            ans_2 === "completed" ? "invisible" : "visible"
           } text-gray-600 body-font relative m-3.5`}
         >
-          <div class="container px-5 py-24 mx-auto bg-gray-100 rounded-3xl opacity-80 w-1/2">
-            <div class="flex flex-col text-center w-full mb-12">
-              <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+          <div className="container px-5 py-24 mx-auto bg-gray-100 rounded-3xl opacity-80 w-1/2">
+            <div className="flex flex-col text-center w-full mb-12">
+              <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
                 Game Number 2
               </h1>
-              <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+              <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
                 Gaming Instruction
               </p>
             </div>
-            <div class="lg:w-1/2 md:w-2/3 mx-auto">
-              <div class="flex flex-wrap -m-2">
-                <div class="p-2 ">
-                  <div class="relative">
-                    <label for="name" class="leading-7 text-sm text-black">
+            <div className="lg:w-1/2 md:w-2/3 mx-auto">
+              <div className="flex flex-wrap -m-2">
+                <div className="p-2 ">
+                  <div className="relative">
+                    <label
+                      htmlFor="name"
+                      className="leading-7 text-sm text-black"
+                    >
                       Problem 2: Search answer in given problem statement!
                     </label>
                     <br />
                     <br />
-                    <a class="text-blue-600" target="_blank" href="/article2">
+                    <a
+                      className="text-blue-600"
+                      target="_blank"
+                      href="/article2"
+                    >
                       Problem Statement
                     </a>
                   </div>
                 </div>
                 <div
-                  class={`${
-                    ans_2 == "completed" ? "visible" : "invisible"
+                  className={`${
+                    ans_2 === "completed" ? "visible" : "invisible"
                   } text-white`}
                 >
                   Task 2 Completed Congrats
                 </div>
-                <div class="p-2 w-full">
-                  <div class="relative">
+                <div className="p-2 w-full">
+                  <div className="relative">
                     <label
-                      for="message"
-                      class="leading-7 text-sm text-gray-600"
+                      htmlFor="message"
+                      className="leading-7 text-sm text-gray-600"
                     >
                       Answer
                     </label>
@@ -256,15 +268,15 @@ function Content(props) {
                       type="text"
                       id="ans-text"
                       name="ans_2"
-                      class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                      className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                       value={ans_2}
                       onChange={handleChange}
                     />
                   </div>
                 </div>
-                <div class="p-2 w-full">
+                <div className="p-2 w-full">
                   <button
-                    class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                    className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
                     onClick={handleSubmit}
                   >
                     Submit
@@ -278,46 +290,53 @@ function Content(props) {
       {/* Third Game */}
       <>
         <section
-          class={`${
-            ans_3 == "completed" ? "invisible" : "visible"
+          className={`${
+            ans_3 === "completed" ? "invisible" : "visible"
           } text-gray-600 body-font relative m-3.5`}
         >
-          <div class="container px-5 py-24 mx-auto bg-gray-100 rounded-3xl opacity-80 w-1/2">
-            <div class="flex flex-col text-center w-full mb-12">
-              <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+          <div className="container px-5 py-24 mx-auto bg-gray-100 rounded-3xl opacity-80 w-1/2">
+            <div className="flex flex-col text-center w-full mb-12">
+              <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
                 Game Number 3
               </h1>
-              <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+              <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
                 Gaming Instruction
               </p>
             </div>
-            <div class="lg:w-1/2 md:w-2/3 mx-auto">
-              <div class="flex flex-wrap -m-2">
-                <div class="p-2 ">
-                  <div class="relative">
-                    <label for="name" class="leading-7 text-sm text-black">
+            <div className="lg:w-1/2 md:w-2/3 mx-auto">
+              <div className="flex flex-wrap -m-2">
+                <div className="p-2 ">
+                  <div className="relative">
+                    <label
+                      htmlFor="name"
+                      className="leading-7 text-sm text-black"
+                    >
                       Problem 3: Search answer in given problem statement!
                     </label>
                     <br />
 
                     <br />
-                    <a class="text-blue-600" target="_blank" href="/article3">
+                    <a
+                      className="text-blue-600"
+                      target="_blank"
+                      href="/article3"
+                    >
                       Problem Statement
                     </a>
                   </div>
                 </div>
                 <div
-                  class={`${
-                    ans_3 == "completed" ? "visible" : "invisible"
+                  className={`${
+                    ans_3 === "completed" ? "visible" : "invisible"
                   } text-white`}
                 >
                   Task 3 Completed Congrats
                 </div>
-                <div class="p-2 w-full">
-                  <div class="relative">
+                <div className="p-2 w-full">
+                  <div className="relative">
                     <label
-                      for="message"
-                      class="leading-7 text-sm text-gray-600"
+                      htmlFor="message"
+                      className="leading-7 text-sm text-gray-600"
                     >
                       Answer
                     </label>
@@ -325,15 +344,15 @@ function Content(props) {
                       type="text"
                       id="ans-text"
                       name="ans_3"
-                      class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                      className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                       value={ans_3}
                       onChange={handleChange}
                     />
                   </div>
                 </div>
-                <div class="p-2 w-full">
+                <div className="p-2 w-full">
                   <button
-                    class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                    className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
                     onClick={handleSubmit}
                   >
                     Submit

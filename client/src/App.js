@@ -1,4 +1,4 @@
-import React, { useState, useEffect, intialRef, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Navbar from "./Components/Navbar";
 import Content from "./Components/Content";
@@ -8,7 +8,7 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Dashboard from "./Components/Dashboard";
 import "./App.css";
 // import Route from "./Components/Routes";
-import Testing from "./Components/Testing";
+
 import Article1 from "./Components/Articles/Article1";
 import Article2 from "./Components/Articles/Article2";
 import Article3 from "./Components/Articles/Article3";

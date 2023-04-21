@@ -3,21 +3,21 @@ import React from "react";
 function Article2() {
   return (
     <div>
-      <section class="text-gray-600 body-font">
-        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+      <section className="text-gray-600 body-font">
+        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
-              class="object-cover h-[65vh] rounded-3xl	 object-center rounded"
+              className="object-cover h-[65vh] rounded-3xl	 object-center rounded"
               alt="hero"
               src="https://i.insider.com/5696bf1ee6183e26008b937f?width=761&format=jpeg"
             />
           </div>
-          <div class="lg:flex-grow bg-gray-100 rounded-3xl m-1.5 md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+          <div className="lg:flex-grow bg-gray-100 rounded-3xl m-1.5 md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
               Are you thinking about Cicada3301?
-              <br class="hidden lg:inline-block" />
+              <br className="hidden lg:inline-block" />
             </h1>
-            <p class="mb-8 leading-relaxed">
+            <p className="mb-8 leading-relaxed">
               Cicada 3301 is a nickname given to three sets of puzzles posted
               under the name "3301" online between 2012 and 2014. The first
               puzzle started on January 4, 2012, on 4chan and ran for nearly a
@@ -33,7 +33,7 @@ function Article2() {
             </p>
             <div>
               <h3>Clues</h3>
-              <ol class="list-decimal	">
+              <ol className="list-decimal	">
                 <li>3301 is Something want to say</li>
                 <li>Read the Question carefully</li>
                 <li>Use provide page features </li>
@@ -48,9 +48,10 @@ function Article2() {
             </p>
 
             <a
-              class="text-blue-600"
+              className="text-blue-600"
               target="_blank"
               href="https://base64.guru/converter/encode/text"
+              rel="noreferrer"
             >
               Click Here
             </a>

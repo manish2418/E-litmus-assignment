@@ -3,21 +3,21 @@ import React from "react";
 function Article3() {
   return (
     <div>
-      <section class="text-gray-600 body-font">
-        <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-          <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+      <section className="text-gray-600 body-font">
+        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
             <img
-              class="object-cover  h-[76vh] rounded-3xl object-center rounded"
+              className="object-cover  h-[76vh] rounded-3xl object-center rounded"
               alt="hero"
               src="https://www.wikihow.com/images/thumb/8/8d/Play-Hide-and-Seek-Tiggy-Step-3-Version-3.jpg/v4-460px-Play-Hide-and-Seek-Tiggy-Step-3-Version-3.jpg.webp"
             />
           </div>
-          <div class="lg:flex-grow bg-gray-100 rounded-3xl m-1.5 md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-            <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+          <div className="lg:flex-grow bg-gray-100 rounded-3xl m-1.5 md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
               Let's See what is Hide&Seek Really?
-              <br class="hidden lg:inline-block" />
+              <br className="hidden lg:inline-block" />
             </h1>
-            <p class="mb-8 leading-relaxed">
+            <p className="mb-8 leading-relaxed">
               Hide-and-seek (sometimes known as hide-and-go-seek) is a popular
               children's game in which at least two players (usually at least
               three)conceal themselves in a set environment, to be found by one
@@ -37,7 +37,7 @@ function Article3() {
             </p>
             <div>
               <h3>Clues</h3>
-              <ol class="list-decimal	">
+              <ol className="list-decimal	">
                 <li>Everything is clear when your vision is strong</li>
                 <li>Exisiting thing never gonna hide</li>
                 <li>See the things in diffrent way</li>
@@ -53,9 +53,10 @@ function Article3() {
               find your answer.
             </p>
             <a
-              class="text-blue-600"
+              className="text-blue-600"
               target="_blank"
               href="https://hide-seek.vercel.app/"
+              rel="noreferrer"
             >
               Click Here
             </a>

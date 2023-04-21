@@ -1,12 +1,7 @@
 import Axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Navbar from "./Navbar";
 const Register = (props) => {
-  let val = {};
-  val = { name: "User" };
-  const [user, setUser] = useState(val);
-
   const getUser = async () => {
     const res = await Axios.get("http://localhost:5043/auth/getdetail", {
       headers: {
@@ -16,11 +11,11 @@ const Register = (props) => {
     if (res.data != null) {
       navigate("/");
     }
-    setUser(res.data);
   };
   useEffect(() => {
     getUser();
   });
+
   const navigate = useNavigate();
   const [data, setData] = useState({
     name: "",
@@ -110,7 +105,7 @@ const Register = (props) => {
             </button>
             <p className="text-xs text-gray-500 mt-3">
               Already a user?{" "}
-              <a class="text-blue" href="/login">
+              <a className="text-blue" href="/login">
                 Login
               </a>
             </p>
