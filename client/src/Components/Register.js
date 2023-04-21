@@ -8,7 +8,7 @@ const Register = (props) => {
   const [user, setUser] = useState(val);
 
   const getUser = async () => {
-    const res = await Axios.get("http://localhost:5043/auth", {
+    const res = await Axios.get("http://localhost:5043/auth/getdetail", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

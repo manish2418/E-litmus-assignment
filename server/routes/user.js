@@ -82,11 +82,10 @@ router.post("/login", async (req, res) => {
   }
 });
 
-router.get("/", requireLogin, async (req, res) => {
+router.get("/getdetail", requireLogin, async (req, res) => {
   try {
     const user = await User.findById(req.user._id).select("-password");
-    console.log(res);
-    res.json(user);
+    return res.json(user);
   } catch (err) {
     console.log(err.message);
   }
