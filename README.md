@@ -59,7 +59,9 @@ To win this game and score 100% of it you have clear all the round with in the 2
 #Lincene
 All the development done by Manish Kumar (2010991931) student of Chitkara University for the purpose of E-Litmus assignment copy of this content highly prohibited.
 
+Answer For GAME1:- development GAME2:-Y2ljYWRhIDMzMDEgZXZlcnl3aGVyZQ==   Game3:-26
 
+NOTE :-On local host everything works perfectly fine but on deployment there is a an small issue on backend relatated to axios failed.
 
 ## For Game Development and used purpose.
 
